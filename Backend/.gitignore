@@ -1,8 +1,0 @@
-/node_modules
-/build
-/.env
-/.env.local
-/DSC_Stores
-/logs/
-/*.log
-/coverage/

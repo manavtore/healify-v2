@@ -1,0 +1,14 @@
+.vscode/settings.json
+./node_modules
+./env
+./build
+# **/package-lock.json
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+**/node_modules
+**/build
+.DS_Store
