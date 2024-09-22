@@ -11,4 +11,13 @@
 
 **/node_modules
 **/build
-.DS_Store
+**/.DS_Store
+
+/frontend/lib/data_layer/data
+
+frontend/lib/data
+# frontend/lib/data/base_api_services.dart
+# frontend/lib/data/network_apis/network_api_services.dart
+# frontend/lib/data/network_exception/network_exception.dart
+# frontend/lib/entities/api_url.dart
+
