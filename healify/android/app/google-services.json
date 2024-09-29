@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "956424255593",
+    "project_id": "healify-b433f",
+    "storage_bucket": "healify-b433f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956424255593:android:a05b4b0fba7f0b85470af8",
+        "android_client_info": {
+          "package_name": "com.example.healify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956424255593-11nu8ri6ot8bq7230o2ge8q7vtakegrk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.healify",
+            "certificate_hash": "3d22e7d348226348219578e9f590e6252204b754"
+          }
+        },
+        {
+          "client_id": "956424255593-orgcsqh4p5nui6uqia6fuo0fost15c6o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJAGJen33y3f9GmiEO_OUqcQrpPsNzKKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956424255593-geco4iluih9tlefsnjtn7ee85q86ql6f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "956424255593-doanliqu2dg340per3egdnkq06s7lnac.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "healify"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956424255593:android:f5bc11ccc06c0e0f470af8",
+        "android_client_info": {
+          "package_name": "com.healify.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956424255593-orgcsqh4p5nui6uqia6fuo0fost15c6o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJAGJen33y3f9GmiEO_OUqcQrpPsNzKKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956424255593-geco4iluih9tlefsnjtn7ee85q86ql6f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "956424255593-doanliqu2dg340per3egdnkq06s7lnac.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "healify"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
