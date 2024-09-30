@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:healify/domain_layer/routes/routename.dart';
 import 'package:healify/presentation/ui/pages/homepage.dart';
 import 'package:healify/presentation/ui/pages/loginPage.dart';
+import 'package:healify/presentation/ui/pages/profilepage.dart';
+import 'package:healify/presentation/ui/pages/searchScreen.dart';
+import 'package:healify/presentation/ui/pages/settingspage.dart';
 
 class Routes{
   
@@ -24,6 +27,32 @@ class Routes{
             return FadeTransition(opacity: animation, child: child);
           },
         );
+
+        case Routename.profile:
+        return PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const Profilepage(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
+        case Routename.settings:
+        return PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const Settingspage(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
+        case Routename.search:
+        return PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const SearchScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
+
 
         default:
         return MaterialPageRoute(builder: (context) {

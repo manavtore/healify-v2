@@ -1,12 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:healify/data/constants/env.dart';
+import 'package:healify/data_layer/constants/env.dart';
 import 'package:healify/domain_layer/providers/authProvider.dart';
 import 'package:healify/domain_layer/routes/route.dart';
+import 'package:healify/domain_layer/routes/routename.dart';
 import 'package:healify/firebase_options.dart';
 import 'package:healify/presentation/ui/utils/theme/themecolor.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:mongo_dart/mongo_dart.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,7 +52,9 @@ class MyApp extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   foregroundColor: ThemeColor.background,
                   backgroundColor: ThemeColor.primary,
-                  minimumSize: const Size(double.infinity, 48),
+                  // minimumSize: const Size(
+                  //   double.infinity, 48
+                  //   ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -68,11 +72,14 @@ class MyApp extends StatelessWidget {
                 style: ButtonStyle(
                   padding: WidgetStateProperty.all(const EdgeInsets.all(16)),
                   iconSize: WidgetStateProperty.all(24),
+                  foregroundColor: WidgetStateProperty.all(ThemeColor.primary),
                 ),
+              
               ),
+             
             ),
             initialRoute:
-                loginNotifier.currentUser != null ? '/home' : '/login',
+                loginNotifier.currentUser != null ? Routename.home : Routename.login,
             onGenerateRoute: Routes.generateRoute,
           );
         },
