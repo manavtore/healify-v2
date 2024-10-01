@@ -5,7 +5,7 @@ import 'package:healify/domain_layer/providers/authProvider.dart';
 import 'package:healify/domain_layer/routes/route.dart';
 import 'package:healify/domain_layer/routes/routename.dart';
 import 'package:healify/firebase_options.dart';
-import 'package:healify/presentation/ui/utils/theme/themecolor.dart';
+import 'package:healify/presentation/utils/theme/themecolor.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:mongo_dart/mongo_dart.dart';

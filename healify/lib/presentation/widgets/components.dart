@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class Components {
 
-  
   void responseSnackbar(
       {required BuildContext context,
       required String message,

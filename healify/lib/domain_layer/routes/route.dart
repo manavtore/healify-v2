@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:healify/domain_layer/routes/routename.dart';
-import 'package:healify/presentation/ui/pages/homepage.dart';
-import 'package:healify/presentation/ui/pages/loginPage.dart';
-import 'package:healify/presentation/ui/pages/profilepage.dart';
-import 'package:healify/presentation/ui/pages/searchScreen.dart';
-import 'package:healify/presentation/ui/pages/settingspage.dart';
+import 'package:healify/presentation/pages/homepage.dart';
+import 'package:healify/presentation/pages/loginPage.dart';
+import 'package:healify/presentation/pages/profilepage.dart';
+import 'package:healify/presentation/pages/searchScreen.dart';
+import 'package:healify/presentation/pages/settingspage.dart';
 
 class Routes{
   
