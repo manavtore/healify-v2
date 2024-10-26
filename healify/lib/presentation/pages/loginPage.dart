@@ -16,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         automaticallyImplyLeading: false,
         title: const Text('Login'),
       ),
@@ -28,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
               child: ElevatedButton(
                 onPressed: (){
                   _handleGoogleSignIn(context);
-                  Navigator.pushNamed(context, Routename.home);
+                  Navigator.pushNamed(context, Routename.signup);
                 },
                 
                 child: const Text('Sign in with Google'),

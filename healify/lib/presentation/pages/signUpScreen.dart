@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
-class CreateUserScreen extends StatefulWidget {
-  const CreateUserScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  _CreateUserScreenState createState() => _CreateUserScreenState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _CreateUserScreenState extends State<CreateUserScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  // Form field controllers
   TextEditingController nameController = TextEditingController();
   TextEditingController usernameController = TextEditingController();
   TextEditingController heightController = TextEditingController();
@@ -22,10 +21,8 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
   TextEditingController imageController = TextEditingController();
   TextEditingController authIdController = TextEditingController();
 
-  // Submit function (mock API call)
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      // Collect the data
       final userData = {
         'name': nameController.text,
         'username': usernameController.text,
@@ -39,7 +36,6 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
         'authId': authIdController.text,
       };
 
-
       print("User Data: $userData");
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('User created successfully!')),
@@ -47,10 +43,40 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
     }
   }
 
+  Widget _buildTextField({
+    required String label,
+    required TextEditingController controller,
+    required TextInputType keyboardType,
+    required String? Function(String?) validator,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      child: TextFormField(
+        controller: controller,
+        keyboardType: keyboardType,
+        validator: validator,
+        decoration: InputDecoration(
+          labelText: label,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            borderSide: const BorderSide(color: Colors.grey),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            borderSide: const BorderSide(color: Colors.blue),
+          ),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Create User'),
       ),
       body: Padding(
@@ -59,63 +85,70 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
           key: _formKey,
           child: ListView(
             children: [
-              TextFormField(
+              _buildTextField(
+                label: 'Name',
                 controller: nameController,
-                decoration: const InputDecoration(labelText: 'Name'),
+                keyboardType: TextInputType.text,
                 validator: (value) => value!.isEmpty ? 'Enter name' : null,
               ),
-              TextFormField(
+              _buildTextField(
+                label: 'Username',
                 controller: usernameController,
-                decoration: const InputDecoration(labelText: 'Username'),
+                keyboardType: TextInputType.text,
                 validator: (value) => value!.isEmpty ? 'Enter username' : null,
               ),
-              TextFormField(
+              _buildTextField(
+                label: 'Height',
                 controller: heightController,
-                decoration: const InputDecoration(labelText: 'Height'),
                 keyboardType: TextInputType.number,
                 validator: (value) => value!.isEmpty ? 'Enter height' : null,
               ),
-              TextFormField(
+              _buildTextField(
+                label: 'Weight',
                 controller: weightController,
-                decoration: const InputDecoration(labelText: 'Weight'),
                 keyboardType: TextInputType.number,
                 validator: (value) => value!.isEmpty ? 'Enter weight' : null,
               ),
-              TextFormField(
+              _buildTextField(
+                label: 'Age',
                 controller: ageController,
-                decoration: const InputDecoration(labelText: 'Age'),
                 keyboardType: TextInputType.number,
                 validator: (value) => value!.isEmpty ? 'Enter age' : null,
               ),
-              TextFormField(
+              _buildTextField(
+                label: 'Blood Group',
                 controller: bloodGroupController,
-                decoration: const InputDecoration(labelText: 'Blood Group'),
+                keyboardType: TextInputType.text,
                 validator: (value) =>
                     value!.isEmpty ? 'Enter blood group' : null,
               ),
-              TextFormField(
+              _buildTextField(
+                label: 'Gender',
                 controller: genderController,
-                decoration: const InputDecoration(labelText: 'Gender'),
+                keyboardType: TextInputType.text,
                 validator: (value) => value!.isEmpty ? 'Enter gender' : null,
               ),
-              TextFormField(
+              _buildTextField(
+                label: 'Address',
                 controller: addressController,
-                decoration: const InputDecoration(labelText: 'Address'),
+                keyboardType: TextInputType.text,
                 validator: (value) => value!.isEmpty ? 'Enter address' : null,
               ),
-              TextFormField(
+              _buildTextField(
+                label: 'Image URL',
                 controller: imageController,
-                decoration: const InputDecoration(labelText: 'Image URL'),
+                keyboardType: TextInputType.url,
                 validator: (value) => value!.isEmpty ? 'Enter image URL' : null,
-              ),
-              TextFormField(
-                controller: authIdController,
-                decoration: const InputDecoration(labelText: 'Auth ID'),
-                validator: (value) => value!.isEmpty ? 'Enter auth ID' : null,
               ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _submitForm,
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                ),
                 child: const Text('Create User'),
               ),
             ],

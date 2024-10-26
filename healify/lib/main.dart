@@ -8,10 +8,10 @@ import 'package:healify/firebase_options.dart';
 import 'package:healify/presentation/utils/theme/themecolor.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:mongo_dart/mongo_dart.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // await Hive.initFlutter();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'healify',
             theme: ThemeData(
-              fontFamily: 'Body',
+              fontFamily: 'Text',
               primaryColor: ThemeColor.primary,
               scaffoldBackgroundColor: ThemeColor.background,
               textTheme: const TextTheme(

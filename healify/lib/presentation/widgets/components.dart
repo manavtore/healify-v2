@@ -3,6 +3,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class Components {
+  
+  static AppBar appBar({required String title}) {
+    return AppBar(
+      title: Text(title),
+    );
+  }
 
   void responseSnackbar(
       {required BuildContext context,

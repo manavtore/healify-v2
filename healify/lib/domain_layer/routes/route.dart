@@ -5,6 +5,7 @@ import 'package:healify/presentation/pages/loginPage.dart';
 import 'package:healify/presentation/pages/profilepage.dart';
 import 'package:healify/presentation/pages/searchScreen.dart';
 import 'package:healify/presentation/pages/settingspage.dart';
+import 'package:healify/presentation/pages/signUpScreen.dart';
 
 class Routes{
   
@@ -39,7 +40,7 @@ class Routes{
         case Routename.settings:
         return PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              const Settingspage(),
+              const SettingsPage(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);
           },
@@ -48,6 +49,14 @@ class Routes{
         return PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
               const SearchScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
+        case Routename.signup:
+        return PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const SignUpScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);
           },

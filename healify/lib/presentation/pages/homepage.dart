@@ -1,4 +1,3 @@
-// ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:healify/domain_layer/routes/routename.dart';
@@ -15,10 +14,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: WillPopScope(
-        onWillPop: () async {
-          return false;
-        },
+      body: PopScope(
         child: SafeArea(
           child: Column(
             children: [
@@ -36,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 CircleAvatar(
                                   radius: 25,
-                                  backgroundColor: Colors.grey,
+                                  backgroundColor: Colors.grey,        
                                 ),
                                 SizedBox(width: 10),
                                 Text(

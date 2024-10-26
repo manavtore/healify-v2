@@ -64,7 +64,7 @@ class _ManageRecordScreenState extends State<ManageRecordScreen> {
             const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
-                itemCount: 5, // Replace with actual record count
+                itemCount: 5, 
                 itemBuilder: (context, index) {
                   return ListTile(
                     leading: const Text(
